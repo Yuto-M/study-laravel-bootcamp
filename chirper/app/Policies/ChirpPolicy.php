@@ -45,7 +45,8 @@ class ChirpPolicy
      */
     public function delete(User $user, Chirp $chirp): bool
     {
-        //
+        // Note: update()と同じ権限を設定できて、冗長さが減る。
+        return $this->update($user, $chirp);
     }
 
     /**
